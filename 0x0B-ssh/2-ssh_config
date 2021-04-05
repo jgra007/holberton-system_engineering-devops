@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Login from the client to the server without password
 Host holberton
-    HostName 34.74.193.141
+    HostName 35.196.227.93
 	    Uuser ubuntu
 	    IdentityFile ~/.ssh/holberton
