@@ -1,11 +1,12 @@
 # Create the ~/.ssh/config with puppet
-file {'~/.ssh/config':
-  ensure  => present,
-  replace => 'yes',
-  path    => '~/.ssh/config',
-  content => 'Host *
-     HostName 35.196.9.108
-     User root
-     IdentityFile ~/.ssh/holberton',
-  mode    => '7000',
+file_line { 'Turn off passwrd auth':
+    ensure  => 'present',
+    path    => '/etc/ssh/ssh_config',
+    line    => 'passwordAuthentication no'
+}
+
+file_line { 'Declare identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile ~/.ssh/holberton',
 }
