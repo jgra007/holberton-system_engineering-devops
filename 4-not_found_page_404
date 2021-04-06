@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Show a message in 404 error
+
 sudo apt-get update -y
 sudo apt-get install nginx -y
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
