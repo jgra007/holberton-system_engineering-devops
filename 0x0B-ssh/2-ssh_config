@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Login from the client to the server without password
-Host holberton
-    HostName 35.196.227.93
-	    Uuser ubuntu
-	    IdentityFile ~/.ssh/holberton
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/holberton
+    PasswordAuthentication no
+	
