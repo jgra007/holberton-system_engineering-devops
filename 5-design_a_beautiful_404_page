@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>DigitalOcean - The page you were looking for doesn't exist (404)</title>
+  <title>TAVOX404 - The page you were looking for doesn't exist (404)</title>
   <script src="https://use.typekit.net/izu1uqu.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <style type="text/css">
@@ -109,9 +109,12 @@
 
 <body>
   <div class="header">
-    <a href="https://www.digitalocean.com/community"><img class="logo" src="https://media.tenor.com/images/fb602fb4c2d7f3e2efd710547d52698e/tenor.gif"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img class="logo" src="https://media.tenor.com/images/fb602fb4c2d7f3e2efd710547d52698e/tenor.gif"></a>
   </div>
   <div class="waves"></div>
+  <div class="oops-copy">
+    <h1>Ceci n'est pas une page</h1>
+    <p class="sub-copy">Head back to the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">community</a>.</p>
   <img class="sammy" src="https://media1.tenor.com/images/333bedbabbc6dc1c7037923ce62776ef/tenor.gif?itemid=17582323">
 </body>
 </html>
