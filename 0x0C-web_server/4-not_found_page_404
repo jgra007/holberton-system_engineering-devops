@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Show a message in 404 error
-sudo apt-get update -y
-sudo apt-get install nginx -y
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
-new_string="server_name _;\n\trewrite ^\/redirect_me youtube.com permanent;"
-second_string="\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
-sed -i "s/server_name _;/$new_string$second_string/" /etc/nginx/sites-enabled/default
-service nginx start
+# Install nginx and change the 404 page
+
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i '/server_name _/a location /redirect_me { rewrite ^ https://assets.justinmind.com/wp-content/uploads/2020/04/best-404-pages.png permanent; }' /etc/nginx/sites-available/default
+sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/html/; internal; }' /etc/nginx/sites-available/default
+service nginx restart
