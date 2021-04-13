@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #Script to connect to server
-ssh -i ~/.ssh/holberton ubuntu@34.75.232.120
-Login
+ssh -i ~/.ssh/holberton ubuntu@54.226.99.123

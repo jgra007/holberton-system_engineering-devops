@@ -5,10 +5,7 @@ apt-get -y update
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-<<<<<<< HEAD
-sed -i '/server_name _/a location /redirect_me { rewrite ^ https://assets.justinmind.com/wp-content/uploads/2020/04/best-404-pages.png permanent; }' /etc/nginx/sites-available/default
-=======
+
 sed -i '/server_name _/a location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlw\u4? permanent; }' /etc/nginx/sites-available/default
->>>>>>> ce2f34382000e3a4bec580c447477b12261edb7f
-sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/html/; internal; }' /etc/nginx/sites-available/default
+
 service nginx restart
