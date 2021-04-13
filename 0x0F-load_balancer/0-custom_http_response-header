@@ -1,24 +1,10 @@
 #!/usr/bin/env bash
-# Serve a web page using nginx
-apt update -y
-apt install -y nginx
-
-echo "Holberton School" > /var/www/html/index.html
-
-REDIRECT="\\\trewrite ^/redirect_me https://github.com/davixcky permanent;"
-sed -i "24i $REDIRECT" /etc/nginx/sites-available/default
-
-NOT_FOUND="\\\terror_page 404 /404.html;\n\
-        location = /404.html {\n\
-                root /var/www/html;\n\
-                internal;\
-        }"
-sed -i "26i $NOT_FOUND" /etc/nginx/sites-available/default
-
-PAGE_404="Ceci n'est pas une page" 
-echo "${PAGE_404}" > /var/www/html/404.html
-
-HEADER_HOSTNAME="\\\tadd_header X-Served-By ${HOSTNAME};"
-sed -i "26i $HEADER_HOSTNAME" /etc/nginx/sites-available/default
-
-service nginx restart
+# Double the number of webservers
+apt-get update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/index.nginx-debian.html
+sed -i "/server_name _;/ a\\\trewrite ^/redirect_me http://www.holbertonschool.com permanent;" /etc/nginx/sites-available/default
+sed -i "/server_name _;/ a\\\tadd_header X-Served-By \"\$HOSTNAME\";" /etc/nginx/sites-available/default
+sed -i "/redirect_me/ a\\\terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+service nginx start
