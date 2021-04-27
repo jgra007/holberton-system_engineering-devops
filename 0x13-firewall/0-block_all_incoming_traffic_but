@@ -1,12 +1,6 @@
-#!/usr/bin/env bash
-# Install the ufw firewall and setup a few rules
-sudo apt upgrade -y
-sudo apt install ufw -y
-sudo ufw default deny incoming
 sudo ufw disable
-sudo ufw allow http
+sudo ufw enable
 sudo ufw allow ssh
-sudo ufw allow https 
-sudo ufw --force enable
-sudo apt service ufw restart
-
+sudo ufw allow http
+sudo ufw allow https
+sudo service ufw restart
