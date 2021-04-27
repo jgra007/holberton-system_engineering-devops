@@ -9,3 +9,4 @@ sudo ufw allow ssh
 sudo ufw allow https 
 sudo ufw --force enable
 sudo apt service ufw restart
+
