@@ -9,7 +9,7 @@ def make_get_request(subreddit, after):
     """
     makes reddit get request to hot topics of subreddit
     """
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
     if after:
         payload = {'after': after, 'limit': '100'}
     else:
